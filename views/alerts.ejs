@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Alerts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card {
+      border: 2px solid #f8f9fa; /* Light border */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      transition: transform 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .card:hover {
+      transform: translateY(-10px); /* Lift the card when hovered */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deep shadow on hover */
+    }
+
+    .card-header {
+      background-color: #343a40; /* Dark background for header */
+      color: #fff; /* White text */
+      font-weight: bold;
+    }
+
+    .card-body {
+      background-color: #f1f1f1; /* Light gray background */
+    }
+
+    .card-title {
+      color: #333; /* Dark text color */
+    }
+
+    .card-text {
+      color: #666; /* Slightly lighter text */
+    }
+
+    .btn-custom {
+      background-color: #007bff; /* Custom button color */
+      color: white;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #0056b3; /* Darker on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">User Alerts</h2>
+
+    <% if (alerts && alerts.length > 0) { %>
+      <div class="row mt-3">
+        <% alerts.forEach(alert => { %>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="card-title"><strong>Alert</strong></h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Message:</strong> <%= alert.message %></p>
+                <p class="card-text"><strong>Region:</strong> <%= alert.region %></p>
+                <p class="card-text"><strong>Condition:</strong> <%= alert.condition %></p>
+                <p class="card-text"><strong>Threshold:</strong> <%= alert.threshold %></p>
+                <div class="mt-4">
+                    <p class="text-center">
+                      <a href="/dashboard" class="btn btn-secondary">Back to Home</a>
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p class="text-center text-muted">No traffic alerts available</p>
+    <% } %>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

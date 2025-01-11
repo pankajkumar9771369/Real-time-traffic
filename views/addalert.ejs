@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Alert</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2 class="text-center mb-4">Add New Alert</h2>
+      <form action="/alerts/add" method="POST" class="needs-validation" novalidate>
+
+        <!-- Region Field -->
+        <div class="mb-3">
+          <label for="region" class="form-label">Region</label>
+          <input 
+            type="text" 
+            name="region" 
+            id="region" 
+            class="form-control" 
+            required 
+            placeholder="Enter region"
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid region.</div>
+        </div>
+
+        <!-- Condition Field -->
+        <div class="mb-3">
+          <label for="condition" class="form-label">Condition</label>
+          <input 
+            type="text" 
+            name="condition" 
+            id="condition" 
+            class="form-control" 
+            required 
+            placeholder="Enter condition"
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid condition.</div>
+        </div>
+
+        <!-- Threshold Field -->
+        <div class="mb-3">
+          <label for="threshold" class="form-label">Threshold</label>
+          <input 
+            type="number" 
+            name="threshold" 
+            id="threshold" 
+            class="form-control" 
+            required 
+            placeholder="Enter threshold"
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid threshold value.</div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea 
+            name="message" 
+            id="message" 
+            class="form-control" 
+            rows="4" 
+            required 
+            placeholder="Enter your alert message here"
+          ></textarea>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid message.</div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Add Alert</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+   
+  </script>
+</body>
+</html>

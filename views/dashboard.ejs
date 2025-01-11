@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Traffic Monitoring App</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Traffic Monitoring App</a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alerts/add"> Add Alerts</a>
+          </li>
+          <li class="nav-item">
+            <form action="/logout" method="POST" class="d-inline">
+              <button type="submit" class="btn btn-sm btn-outline-danger">Logout</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="container my-5">
+    <h1 class="text-center">Welcome, <%= username %>!</h1>
+    <p class="text-center">Here you can monitor real-time traffic and alerts.</p>
+
+    <div class="row text-center mt-5">
+      <div class="col-md-6">
+        <a href="/traffic/flow" class="btn btn-primary w-100 py-3">View Traffic flow </a>
+      </div>
+      <div class="col-md-6">
+        <a href="/alerts/region" class="btn btn-warning w-100 py-3">View Alerts</a>
+    </div>
+    
+      
+    </div>
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
