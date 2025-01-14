@@ -1,4 +1,7 @@
 {
+  "engines":{
+    "node":"v20.17.0"
+  },
   "name": "traffic-app",
   "version": "1.0.0",
   "main": "middleware.js",
