@@ -14,7 +14,7 @@ const server=http.createServer(app)
 const alertRoutes = require('./Routes/alertRoutes');
 const User = require("./Models/user.js");
 const userRouter = require("./Routes/user.js");
-const trafficRoutes = require('./Routes/trafficRoutes');
+
 // Middleware
 app.use(cors({ origin: 'http://localhost:4000', credentials: true }));
 app.use(express.json());
@@ -37,7 +37,7 @@ mongoose
 
 
 
-  app.use('/traffic',userVerification, trafficRoutes);
+
   app.use('/alerts',userVerification, alertRoutes);
   app.use("/",userRouter);
 
